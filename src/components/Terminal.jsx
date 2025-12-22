@@ -2,8 +2,8 @@ import React, {useEffect, useRef, useState} from "react";
 import Typewriter from "./Typewriter";
 
 const USER = "guest";
-const SERVICE = "eger.online";
-const HOST = "eger.online";
+const SERVICE = "eger.software";
+const HOST = "eger.software";
 const promptPrefix = `${USER.toLowerCase()}@${SERVICE.toLowerCase()}:~$`;
 
 const COMMANDS = [
