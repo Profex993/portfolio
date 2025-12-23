@@ -11,7 +11,7 @@ const COMMANDS = [
     {name: "profile", description: "overview of the person"},
     {name: "bio", description: "short biography"},
     {name: "skills", description: "technical skills"},
-    {name: "certificates", description: "earned certificates"},
+    {name: "certificates", description: " earned certificates"},
     {name: "projects", description: "selected projects"},
     {name: "contact", description: "contact information"},
     {name: "whoami", description: "current user"},
@@ -19,6 +19,14 @@ const COMMANDS = [
     {name: "sysinfo", description: "service information"},
     {name: "clear", description: "clear screen"},
 ];
+
+function isWindows() {
+    const platform = navigator.userAgentData?.platform;
+    if (typeof platform === "string" && platform.length > 0) {
+        return platform.toLowerCase().includes("windows");
+    }
+    return false;
+}
 
 const WELCOME_LINES = [
     `Trying ${HOST}...`,
@@ -29,6 +37,7 @@ const WELCOME_LINES = [
     `[ INFO ] This is fictional demo software running entirely in your browser.`,
     `[ INFO ] No real network requests are performed.`,
     ``,
+    `${isWindows() ? "[ WARNING ] Windows detected! Consider installing Linux." : ""}`,
     `[ BOOT ] Initializing runtime...`,
     `[ OK   ] Allocated client session (user: ${USER})`,
     `[ OK   ] Loaded core modules`,
